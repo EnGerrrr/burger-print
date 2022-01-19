@@ -1,0 +1,23 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" *ngIf="currentUser">
+  <div class="container">
+    <a class="navbar-brand">
+      <img src="./assets/images/logo-burger.png" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mr-auto">
+        <li class="nav-item">
+          <a routerLinkActive="active" class="nav-link" routerLinkActive="active"
+            routerLink="/pages/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" class="nav-item nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

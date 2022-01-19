@@ -1,0 +1,165 @@
+<div id="bg">
+    <div class="padd">
+        <h4 class="">CHOOSE YOUR DESIGN</h4>
+        <p id="head">
+            <span>
+        Select products for your campaign. You can choose up to
+    </span>
+            <strong>25</strong>
+            <span class="ms-2">products per campaign</span>
+        </p>
+    </div>
+
+
+
+    <!-- Header -->
+    <div id="row1" class="padd">
+        <div class="col" *ngFor="let Typeproduct of Typeproducts" [ngStyle]="{'background-color': Typeproduct.actived?'orange':'white','color':Typeproduct.actived?'white':'black','margin-right':Typeproduct.TYPE==6?'0px':'10px'}" (click)="findtypeProduct(Typeproduct.TYPE)">
+            <p>{{Typeproduct.catalog_name}}</p>
+            <p [ngStyle]="{'color':Typeproduct.actived?'white':'gray'}">
+                ({{Typeproduct.total}})
+            </p>
+        </div>
+    </div>
+
+    <div class="d-flex mt-4 justify-content-between padd">
+
+        <div class="btn-group" style="width: 10%;">
+            <button type="button" class="btn bg-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Normal
+    </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item">Normal</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item">Personalized</a></li>
+            </ul>
+        </div>
+        <form #form="ngForm" class="input-group" style="width: 88%;float: right;height: 48px;">
+            <input name="search" [(ngModel)]="namefind.name" (keyup)="searchfindProduct()" type="text" class="form-control p-2" placeholder="Search your product" aria-label="Input group example" aria-describedby="btnGroupAddon">
+            <div class="input-group-text btn btn-warning p-2" style="width: 50px;" id="btnGroupAddon">
+                <i style="color: white;padding-top: 10px;" class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <div class="mt-4">
+            <ng-container *ngIf="typeclick!=0">
+                <h4 class="border-start border-warning border-4 ps-2" style="margin-left: 30px;">
+                    {{Name}}
+                </h4>
+                <div class="">
+                    <div id="rowdiv1" class="row m-0" style="padding: 18px;">
+                        <div class="col-md-3" *ngFor="let card of listcards">
+                            <div id="row2" style="padding: 5px;position: relative;" class="card hover">
+
+                                <img src={{card.mockup_image_url}} class="card-img-top" alt="...">
+                                <span id="logoP">P</span>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{card.name}}</h5>
+                                    <p class="card-text">
+                                        <span style="color: gray;">Base cost:</span>
+                                        <span class="text-danger fw-bold">
+                            <span class="me-1 ms-1">$</span>
+                                        <span>{{card.base_cost}}</span>
+                                        </span>
+                                    </p>
+                                    <p style="color: gray;">
+                                        <span>Processing Time:</span>
+                                        <span>4-6 days</span>
+                                    </p>
+
+                                    <div class="d-flex justify-content-between">
+                                        <a style="font-size: 12px;padding: 7px;height: 40px;" routerLink="/platform/campaign/create" class="btn border-secondary hoverbtn">ADD PRODUCT</a>
+
+                                        <a id="hover-a" style="font-size: 12px;color: white;padding: 7px;height: 40px;" class="btn btn-lg hoverbtn hovera" (click)="openModal(template)">VIEW PRODUCT</a>
+                                    </div>
+                                    <ng-template #template>
+
+                                        <div class="modal-header" style="border: none;">
+
+                                            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                                        <span aria-hidden="true" class="visually-hidden">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p style="text-align: center;">
+                                                <img style="width: 235px;height: 280px;" src={{card.mockup_image_url}} class="card-img-top" alt="...">
+                                            </p>
+                                            <p [innerHTML]="card.html_desc"></p>
+                                        </div>
+                                        <div class="modal-footer" style="border: none;">
+                                            <button style="width: 100%;font-size: 18px;background-color: #fd7e14;height: 46px;" type="button" class="btn text-white" routerLink="/platform/campaign/create">ADD PRODUCT</button>
+                                        </div>
+
+                                    </ng-template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </ng-container>
+
+            <ng-container *ngIf="typeclick==0">
+                <div *ngFor="let list of groupcards">
+                    <h4 *ngIf="list[0]!=null&&list[0]!=undefined" class="border-start border-warning border-4 ps-2" style="margin-left: 30px;">{{list[0].catalog_name}}</h4>
+
+                    <div id="rowdiv2" class="row m-0" style="padding: 18px;">
+                        <div class="col-md-3" *ngFor="let card of list">
+                            <div id="row3" style="padding: 5px;position: relative;" class="card hover">
+                                <img src={{card.mockup_image_url}} class="card-img-top" alt="...">
+                                <span id="logoP">P</span>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{card.name}}</h5>
+                                    <p class="card-text">
+                                        <span style="color: gray;">Base cost:</span>
+                                        <span class="text-danger fw-bold">
+                                    <span class="me-1 ms-1">$</span>
+                                        <span>{{ card.base_cost}}</span>
+                                        </span>
+                                    </p>
+                                    <p style="color: gray;">
+                                        <span>Processing Time:</span>
+                                        <span>4-6 days</span>
+                                    </p>
+
+                                    <div class="d-flex justify-content-between">
+                                        <a routerLink="/platform/campaign/create" style="font-size: 12px;padding: 7px;height: 40px;" class="btn hoverbtn border border-secondary">ADD PRODUCT</a>
+                                        <a id="hover-a" style="font-size: 12px;color: white;padding: 7px;height: 40px;" class="btn btn-lg hoverbtn hovera" (click)="openModal(template)">VIEW PRODUCT</a>
+                                    </div>
+                                    <ng-template #template>
+
+                                        <div class="modal-header" style="border: none;">
+
+                                            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+                                        <span aria-hidden="true" class="visually-hidden">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p style="text-align: center;">
+                                                <img style="width: 235px;height: 280px;" src={{card.mockup_image_url}} class="card-img-top" alt="...">
+                                            </p>
+                                            <p [innerHTML]="card.html_desc"></p>
+                                        </div>
+                                        <div class="modal-footer" style="border: none;">
+                                            <button style="width: 100%;font-size: 18px;background-color: #fd7e14;height: 46px;" type="button" class="btn text-white" routerLink="/platform/campaign/create">ADD PRODUCT</button>
+                                        </div>
+
+                                    </ng-template>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

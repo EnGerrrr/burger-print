@@ -1,0 +1,151 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="flex-shrink-0 bg-white">
+            <img style="padding: 7.5px 17.5px;border-bottom: 0.5px solid gainsboro;" src="../../assets/logo-burgerprints-AI.svg" alt="">
+            <div>
+                <ul id="scoll" class="list-unstyled">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed">
+                            <a class="hover" routerLink="/platform/dashboard">
+                                <i  class="fa fa-home" aria-hidden="true"></i>    <span>Dashboard</span>
+                            </a>
+                        </button>
+
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                <i class="fa fa-tag" aria-hidden="true"></i>
+                                <span >Campaigns</span>
+                        </button>
+                        <div class="collapse" id="dashboard-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="padding-left: 30px;">
+                                <li class="mt-2"><a class="hover" routerLink="/platform/campaign" class="link-dark rounded hover">All campaigns</a></li>
+                                <li class="mt-2"><a class="hover" routerLink="platform/campaign/productfeed" class="link-dark rounded hover">Product feed</a></li>
+                                <li class="mt-2"><a class="hover" routerLink="platform/campaign/clipart" class="link-dark rounded hover">Clipart</a></li>
+                                <li class="mt-2"><a class="hover" routerLink="platform/campaign/mockup" href="#" class="link-dark rounded hover">Mockup</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                <span>Orders</span>
+                        </button>
+                        <div class="collapse" id="orders-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="padding-left: 30px;">
+                                <li class="mt-2"><a routerLink="/platform/orders/all-order" class="link-dark rounded hover">All orders </a></li>
+                                <li class="mt-2"><a routerLink="/platform/orders/abandoned-order" class="link-dark rounded hover">Abandoned orders</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button routerLink="/platform/report/conversion-funnel" class="btn btn-toggle align-items-center rounded collapsed hover">
+                                <i class="fa fa-flag" aria-hidden="true"></i>
+                                <span>Report</span>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover">
+                                <i class="fa fa-archive" aria-hidden="true"></i>
+                                <span>Storefronts</span>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover">
+                                <i class="fa fa-first-order" aria-hidden="true"></i>
+                                <span> Domains</span>
+                        </button>
+                    </li>
+
+
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                <i class="fa fa-money" aria-hidden="true"></i>  <span>Promotion</span>
+                        </button>
+                        <div class="collapse" id="account-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="padding-left: 30px;">
+                                <li><a href="#" class="link-dark rounded hover">Domain</a></li>
+                                <li><a href="#" class="link-dark rounded hover">Store</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>   <span>Emails</span>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                      <button class="btn btn-toggle align-items-center rounded collapsed hover" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                              <i class="fa fa-money" aria-hidden="true"></i>  <span>Optimize SEO</span>
+                      </button>
+                      <div class="collapse" id="seo-collapse">
+                          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="padding-left: 30px;">
+                              <li><a  class="link-dark rounded hover">Domain</a></li>
+                              <li><a  class="link-dark rounded hover">Store</a></li>
+                              <li><a  class="link-dark rounded hover">Campaign</a></li>
+                          </ul>
+                      </div>
+                  </li>
+
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover">
+                                <i class="fa fa-tag" aria-hidden="true"></i>
+                                <span>Brand</span>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover">
+                            <i style="font-size: 15px;" class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                            <span>Payouts</span>
+                        </button>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed hover">
+                            <a >
+                                <i class="fa fa-tag" aria-hidden="true"></i>
+                                <span>Product Catalogue</span>
+                            </a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <span id="setting" class="hover">
+                <i class="fa fa-cog me-1" aria-hidden="true"></i>
+                <span>Setting</span>
+            </span>
+
+        </div>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <div id="header">
+            <button style="background-color: white;font-size: 27px;margin-top: 10px;border: none;margin-left: 15px;" id="tableft" type="button" mat-button (click)="drawer.toggle()">
+         <i class="fas fa-bars"></i>
+             </button>
+
+            <div id="avatar">
+
+                <div class="dropdown">
+                    <i id="bell" class="fa fa-bell me-2" aria-hidden="true"></i>
+                    <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{name}}
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a routerLink="dashboard" class="dropdown-item">Switch to Fullfillment</a></li>
+                        <li><a routerLink="/edituser" class="dropdown-item">Accoutns Settings</a></li>
+                        <li>
+                            <hr>
+                        </li>
+                        <li><a (click)="logout()" class="dropdown-item">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="scollright">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</mat-drawer-container>

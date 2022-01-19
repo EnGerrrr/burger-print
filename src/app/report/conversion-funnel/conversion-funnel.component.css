@@ -1,0 +1,252 @@
+.wrapper {
+  padding: 30px 30px 7rem;
+  background-color: #e5e5e5;
+  height: 1588px;
+}
+.nav-tabs li a {
+  text-decoration: none;
+}
+.nav-tabs li {
+  padding: 0 26px 18px 24px;
+}
+.nav-tabs {
+  border-bottom: 1px solid #cecece;
+}
+.active {
+  border-bottom: 2px solid #eb8708;
+}
+.pb-3 {
+  padding-bottom: 0 !important;
+}
+.nav-tabs li:hover {
+  border-bottom: 2px solid #eb8708;
+}
+.icon-sub {
+  margin-right: 6px;
+}
+.main {
+  padding: 18px;
+}
+.card-content {
+  margin: 30px 15px;
+  border-radius: 15px;
+  min-height: 150px;
+  background: #fff;
+}
+.box-color1 {
+  height: 20px;
+  width: 20px;
+  background: rgb(239, 145, 27);
+}
+
+.box-color2 {
+  height: 20px;
+  width: 20px;
+  background: rgb(0, 123, 255);
+}
+.box-color3 {
+  height: 20px;
+  width: 20px;
+  background: rgb(40, 167, 69);
+}
+.font-size-12 {
+  font-size: 12px !important;
+}
+.pl-3,
+.px-3 {
+  padding-left: 1rem !important;
+}
+.pl-6 {
+  padding-left: 3.5rem;
+}
+.no-data {
+  height: 85%;
+  min-height: 100px;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #ccc;
+  position: sticky;
+  left: 0;
+}
+.cutomize {
+  margin-right: 18px;
+}
+.customize-sub {
+  background: #ccc;
+  height: 42px;
+  position: relative;
+}
+.show1 {
+  display: block;
+  font-size: 16px;
+  /* list-style: none; */
+  margin-top: 1px;
+}
+.dropdown-menu {
+  width: 282px !important;
+  margin-top: 1px;
+}
+.font-size16 {
+  font-size: 16px;
+}
+label {
+  display: contents;
+}
+.dropdown-menu ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.dropdown-menu ul {
+  margin-top: 12px;
+}
+.customize-sub2 {
+  margin-top: 10px;
+  position: absolute;
+  margin-left: 60px;
+}
+.export1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.p-25px {
+  padding: 25px !important;
+}
+.paging-2r {
+  padding: 2rem;
+}
+.pd-l-12 {
+  padding-left: 12px;
+}
+.btn {
+  border-color: #ced4da;
+  background: #fff;
+  height: 40px;
+  color: #959595;
+  border-radius: 3px;
+  min-width: 89px;
+}
+.template {
+  margin-left: 12px;
+}
+h4 {
+  margin-right: 56px;
+}
+.select1 {
+  margin-right: 30px;
+  width: 150px;
+  padding-left: 12px;
+}
+.input-group {
+  padding-left: 12px;
+}
+.select2 {
+  margin-right: 30px;
+  width: 150px;
+}
+.select3 {
+  width: 120px;
+}
+.icon-mg {
+  margin-right: 8px;
+}
+input[type="checkbox"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #fff;
+  /* content: ''; */
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #d1d3d1;
+}
+
+input[type="checkbox"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #fff;
+  /* content: ''; */
+  display: inline-block;
+  visibility: inherit;
+  border: 1px solid #eb8708;
+}
+.cusomize-columns {
+  margin-right: 30px;
+  width: 150px;
+}
+.table > :not(:first-child) {
+  border-top: 0px solid currentColor;
+}
+.table th {
+  text-transform: none;
+}
+.fo-text {
+  font-size: 16px;
+  font-weight: 300;
+}
+.fo-text1 {
+  font-weight: 400;
+}
+.lable1 {
+  width: 54px;
+}
+.checkbox1 {
+  margin-right: 8px;
+  font-size: 14px;
+  transform: scale(1.2);
+  border: #fdaa41;
+  background-color: #fdaa41;
+}
+.btn {
+  border-color: #fdaa41;
+  background: #fff;
+  height: 40px;
+  color: #fdaa41;
+  border-radius: 3px;
+  min-width: 89px;
+}
+.btn-burger {
+  color: #fff !important;
+  background-color: #ef911b !important;
+  border-color: #ef911b;
+}
+.show > .btn-secondary.dropdown-toggle {
+  color: #fdaa41;
+  background-color: #fff;
+  border-color: #fdaa41;
+}
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  height: 46px;
+}
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-style: none;
+}
+.select1 ::ng-deep .ng-value-container {
+  border-top-width: 1px !important;
+  padding-left: 10px !important;
+  padding-top: 16px !important;
+  color: gray;
+}

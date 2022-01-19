@@ -1,0 +1,32 @@
+<div [ngClass]="templateClass" *ngIf="totalItems">
+  <div class="app-pagination-wrap d-flex align-items-center flex-column">
+    <div class="app-pagination-count">
+      <p class="font-size-13 margin-0" *ngIf="totalItems">
+        Showing {{ (p.getCurrent() === 1 ? 1 : (p.getCurrent() - 1) * currentRow + 1) }} to
+        {{ (p.getCurrent() * currentRow > totalItems ? totalItems : p.getCurrent() * currentRow) }} of
+        {{ totalItems }} rows
+      </p>
+    </div>
+    <div class="display-flex-center row-pagination-table">
+      <pagination-template #p="paginationApi" [id]="templateId" (pageChange)="change($event)" class="d-flex"
+        maxSize="6">
+        <ul class="custom-pagination pagination pagination-sm">
+          <li class="pagination-previous" [class.disabled]="p.isFirstPage()">
+            <a (click)="p.previous()"><i class="fas fa-chevron-left"></i></a>
+          </li>
+          <li *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+            <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+              <span>{{ page.label }}</span>
+            </a>
+            <a class="active" *ngIf="p.getCurrent() === page.value">
+              <span>{{ page.label }}</span>
+            </a>
+          </li>
+          <li class="pagination-next" [class.disabled]="p.isLastPage()">
+            <a (click)="p.next()"><i class="fas fa-chevron-right"></i></a>
+          </li>
+        </ul>
+      </pagination-template>
+    </div>
+  </div>
+</div>

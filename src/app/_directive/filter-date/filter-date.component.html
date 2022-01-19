@@ -1,0 +1,30 @@
+<!-- <div class="form-group" *ngIf="showCustomDate">
+	<my-date-range-picker [options]="myDateRangePickerOptions"
+	(dateRangeChanged)="onDateRangeChanged($event)" placeholder="Choose date range"></my-date-range-picker>
+</div> -->
+<!-- <div class="form-group option-dropdown-select display-flex-center margin-0" *ngIf="!hideSelectDate">
+	<label for="date" *ngIf="showLabelTime" class="color-6f margin-0 label-show-time">Show</label>
+	<button type="button" data-toggle="dropdown" class="form-control label-time font-size-12 margin-0 text-left" [ngClass]="!showLabelTime ? 'not-label': ''">
+		{{ startTimeLabel }} 
+		<i class="ion-ios-arrow-down pull-right" aria-hidden="true"></i>
+	</button>
+	<ul class="dropdown-menu dropdown-select" [ngClass]=" showLabelTime ? 'dropdown-menu-right' : '' ">
+		<li *ngFor='let day of timeFilter' [ngClass]="(day.day_space === startTime) ? 'active': ''">
+			<a (click)="setTimeFilter(day.day_space, day.label)" href="javascript:;">{{ day.label }}</a>
+		</li>
+	</ul>
+</div> -->
+<div class="dropdown">
+	<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownDate" data-toggle="dropdown"
+		aria-haspopup="true" aria-expanded="false">
+		{{ startTimeLabel }}
+	</button>
+	<div class="dropdown-menu" aria-labelledby="dropdownDate">
+		<button class="dropdown-item" type="button" *ngFor="let day of timeFilter"
+			(click)="setTimeFilter(day.day_space, day.label)">{{ day.label }}</button>
+	</div>
+</div>
+<span class="font-size-12 color-text-sub filter-date-desc"
+	[ngStyle]="{'text-align': textDescAlign, 'padding-right': textDescPaddingR + 'px', 'padding-left': textDescPaddingR + 'px' }">
+	Figures based on {{showStartTime}} GMT{{timeZone}} to {{showEndTime}} GMT{{timeZone}}
+</span>

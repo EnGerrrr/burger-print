@@ -1,0 +1,187 @@
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script> -->
+
+<div class="wrapper">
+  <div class="pt-2 pb-3">
+    <ul class="nav nav-tabs pb-3 border-bottom-secondary">
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted active">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning "
+          routerLink="/platform/report/conversion-funnel"> Conversion Funnel </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning "
+          routerLink="/platform/report/sale-report"> Sales Report </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/profit">
+          Profit </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/abandoned-checkout"> Abandoned checkout </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/earning-source"> Earning source </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/top-products"> Top products </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/sale-in-day"> Sales of the Day </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning "
+          routerLink="/platform/report/top-campaign"> Top Campaigns </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="d-flex align-items-center pb-3">
+      <h4 class=" text-secondary">Total views</h4>
+      <div class="d-flex flex-wrap">
+        <form #formsearch="ngForm" class="input-group ">
+          <ng-select class="select1" name="time" [items]="time" [(ngModel)]="selectedTime" bindLabel="name"
+            bindValue="name" [clearable]="false" [searchable]="false">
+            <ng-template ng-label-tmp let-item="item">
+              <i class="fa fa-calendar icon-mg" aria-hidden="true"></i>{{item.name}}
+            </ng-template>
+          </ng-select>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-content m-0 mb-5">
+    <div class="p-4 d-flex flex-wrap">
+      <div class="d-flex align-items-center pl-6 pt-3 ng-star-inserted">
+        <div class="box-color1"></div>
+        <div class="pl-3 font-size-12">Total Views</div>
+      </div>
+      <div class="d-flex align-items-center pl-6 pt-3 ng-star-inserted">
+        <div class="box-color2"></div>
+        <div class="pl-3 font-size-12">Add to cart</div>
+      </div>
+      <div class="d-flex align-items-center pl-6 pt-3 ng-star-inserted">
+        <div class="box-color3"></div>
+        <div class="pl-3 font-size-12">Orders</div>
+      </div>
+    </div>
+    <div class="p-25px ng-star-inserted">
+      <!-- <div class="no-data">No data</div> -->
+      <div style="text-align:center">
+        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions" [responsive]="chartOptions.responsive" [xaxis]="chartOptions.xaxis"
+          [legend]="chartOptions.legend" [fill]="chartOptions.fill">
+        </apx-chart>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-content m-0">
+    <div class="paging-2r">
+      <div class="row d-flex justify-content-between paging-custom">
+        <div class="row d-flex align-items-center">
+          <form #formsearch="ngForm" class="input-group display1 ">
+            <ng-select class=" select1" name="domains" [items]="domains" [(ngModel)]="selecteddomain" bindLabel="name"
+              bindValue="name" [clearable]="false" [searchable]="false">
+              <ng-template ng-label-tmp let-item="item" class="pd-l-12">
+                {{item.name}}
+              </ng-template>
+            </ng-select>
+            <ng-select class="select1" name="time" [items]="time" [(ngModel)]="selectedTime" bindLabel="name"
+              bindValue="name" [clearable]="false" [searchable]="false">
+              <ng-template ng-label-tmp let-item="item">
+                {{item.name}}
+              </ng-template>
+            </ng-select>
+            <div class="d-flex export1">
+              <div class="dropdown cutomize">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="sampleDropdownMenu"
+                  data-toggle="dropdown">
+                  Customize Columns
+                </button>
+                <div class="dropdown-menu ">
+                  <div class="customize-sub">
+                    <span class="customize-sub2 font-size16">Customize columns</span>
+                  </div>
+                  <ul class="overflow-hidden font-size16">
+                    <li *ngFor="let column of columns">
+                      <input type="checkbox" class="checkbox1 k-checkbox" id="{{ column }}"
+                        [disabled]="isDisabled(column)" [checked]="!isHidden(column)" (change)="hideColumn(column)">
+                      <label class="lable1" for="{{ column }}">{{ column }}</label>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <button class="btn btn-primary  fz btn-burger">
+                <span>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Export</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+
+        <div class="table-responsive">
+          <table class="table table-striped border-top table-hover " id="mydatatable">
+            <thead class="fo-text">
+              <tr>
+                <th scope="col" *ngIf="!isHidden('Date')">Date</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Views')">Views</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('ATC')">ATC</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Initiated Checkouts')">Initiated Checkouts</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Orders')">Orders</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('ATC rate')">ATC rate</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Checkout rate')">Checkout rate</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Abandoned checkout')">Abandoned checkout</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Abandoned rate')">Abandoned rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users" class="ng-star-inserted">
+                <th scope="row" class="ng-star-inserted fo-text1" *ngIf="!isHidden('Date')">{{ user.time_value | date |
+                  lowercase }}</th>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Views')">{{ user.views }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('ATC')">{{ user.atc }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Initiated Checkouts')">{{ user.checkout }}
+                </td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Orders')">{{ user.paid }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('ATC rate')">{{ user.atc | percent }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Checkout rate')">{{ user.checkout | percent
+                  }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Abandoned checkout')">{{ user.abandoned }}
+                </td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Abandoned rate')">{{ user.abandoned | percent
+                  }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <script>
+    $('#mydatatable').DataTable({
+      searching: false,
+      ordering: false,
+      lengthMenu: [[5,10,25,50, -1], [5, 10, 25, 50, "Alll"]],
+      createdRow: function (row, data, index) {
+        if (data[5].replace(/[\$,]/g, '') * 1 > 150000 ) {
+          $('td', row).eq(5).addClass('text-success');
+        }
+      }
+    });
+  </script>

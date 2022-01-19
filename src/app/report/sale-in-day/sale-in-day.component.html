@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="pt-2 pb-3">
+    <ul class="nav nav-tabs pb-3 border-bottom-secondary">
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/conversion-funnel"> Conversion Funnel </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/sale-report"> Sales Report </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/profit"> Profit </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/abandoned-checkout"> Abandoned checkout </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/earning-source"> Earning source </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/top-products"> Top products </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted active">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning " routerLink="/platform/report/sale-in-day"> Sales of the Day </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a  class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning " routerLink="/platform/report/top-campaign"> Top Campaigns </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="d-flex align-items-center pb-3">
+      <h4 class=" text-secondary">Sales of the Day</h4>
+      <div class="d-flex flex-wrap">
+        <form #formsearch="ngForm" class="input-group" style="width: 132px ;height: 40px;">
+            <ng-select style="width: 130px; " name="time" [items]="time" [(ngModel)]="selectedTime" bindLabel="name" bindValue="name" [clearable]="false" [searchable]="false">
+                <ng-template style="margin-left: 12px;" ng-label-tmp let-item="item">
+                  <i class="fa fa-calendar icon-sub" aria-hidden="true"></i>
+                    {{item.name}}
+                </ng-template>
+            </ng-select>
+        </form>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="card-content m-0 mb-5">
+    <div class="p-25px ng-star-inserted">
+      <div class="no-data">No data</div>
+    </div>
+  </div>
+</div>

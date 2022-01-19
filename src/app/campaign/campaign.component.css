@@ -1,0 +1,79 @@
+/* @import "~@swimlane/ngx-datatable/index.css";
+@import "~@swimlane/ngx-datatable/themes/material.scss";
+@import "~@swimlane/ngx-datatable/assets/icons.css"; */
+
+#bg {
+    font-size: 16px;
+    padding: 30px;
+    background-color: gainsboro;
+}
+
+select {
+    width: 140px;
+}
+
+element.style {
+    /* font-size: 16px; */
+    height: 50px;
+    width: 100%;
+}
+
+.draggable {
+    font-size: 16px;
+}
+
+.datatable-header {
+    font-size: 20px !important;
+}
+
+.cell-table {
+    background-color: red !important;
+}
+.btn-warning {
+  color: #000;
+  background-color: #ef911b;
+  border-color: #ef911b;
+}
+/* .ng-select-container {} */
+
+ng-select.ng-invalid.ng-touched .ng-select-container {
+    height: 40px;
+}
+
+::ng-deep .ng-select-container .ng-has-value {
+    height: 40px !important;
+}
+
+::ng-deep .ng-select .ng-select-container,
+ ::ng-deep .ng-select.ng-select-single .ng-select-container {
+    min-height: 40px;
+    font-size: 16px;
+}
+
+::ng-deep .ng-value-container {
+    border-top-width: 1px !important;
+    padding-left: 10px !important;
+    color: gray;
+}
+
+::ng-deep .ng-dropdown-panel.ng-select-bottom {
+    top: 45px
+}
+
+::ng-deep .ng-option .ng-star-inserted .ng-option-marked {
+    border-bottom: 1px solid gray;
+}
+
+::ng-deep .ng-dropdown-panel.ng-select-top {
+    bottom: -100px;
+}
+
+::ng-deep .empty-row {
+    text-align: center !important;
+    margin-top: 150px;
+    color: gray;
+}
+
+::ng-deep .datatable-header-cell-label.draggable {
+    font-size: 16px;
+}

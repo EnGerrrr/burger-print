@@ -1,0 +1,160 @@
+/* @import "~@swimlane/ngx-datatable/index.css";
+@import "~@swimlane/ngx-datatable/themes/material.scss";
+@import "~@swimlane/ngx-datatable/assets/icons.css"; */
+
+#main {
+  background-color: #e5e5e5;
+  height: 1000px;
+  padding: 30px 30px 7rem;
+}
+.cards-container {
+  background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    height: 500px;
+}
+.ng-select .ng-select-container {
+  border: 1px solid #e5e5e5;
+  width: 150px;
+}
+#bg {
+  font-size: 16px;
+  /* padding: 30px; */
+  background-color: #e5e5e5;
+}
+
+select {
+  width: 140px;
+}
+
+element.style {
+  /* font-size: 16px; */
+  height: 50px;
+  width: 100%;
+}
+
+.draggable {
+  font-size: 16px;
+}
+
+.datatable-header {
+  font-size: 20px !important;
+}
+
+.cell-table {
+  background-color: red !important;
+}
+.search-sub {
+  height: 40px;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  margin-bottom: 2px;
+}
+.input-sub {
+    height: 40px;
+    width: 42px;
+    border-radius: 0 5px 5px 0;
+    background-color: #ef911b;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+}
+.card-body {
+  padding: 3rem 2rem 1rem 2rem;
+  height: 154px;
+}
+/* .border-top {
+  border-top: 1px solid #dee2e6!important;
+} */
+.table-responsive {
+  padding: 0rem 2rem;
+}
+.bg-white {
+  background-color: #fff!important;
+}
+.table th {
+  border-top: 0;
+  font-weight: 400;
+  color: #000;
+  font-size: 16px;
+  padding: 0.75rem;
+  text-transform: none;
+}
+.no-data[_ngcontent-qqv-c10] {
+  height: 85%;
+  min-height: 100px;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #ccc;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+}
+table {
+  height: 200px;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: none;
+  border: 1px groove;
+  text-align: center;
+}
+.button-icon {
+  height: 40px;
+  width: 50px;
+  border-radius: 0 4px 4px 0;
+  background-color: #ef911b;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* .ng-select-container {} */
+
+ng-select.ng-invalid.ng-touched .ng-select-container {
+  height: 40px;
+}
+
+::ng-deep .ng-select-container .ng-has-value {
+  height: 40px !important;
+}
+
+::ng-deep .ng-select .ng-select-container,
+::ng-deep .ng-select.ng-select-single .ng-select-container {
+  min-height: 40px;
+  font-size: 16px;
+}
+
+::ng-deep .ng-value-container {
+  border-top-width: 1px !important;
+  padding-left: 10px !important;
+  color: gray;
+}
+
+::ng-deep .ng-dropdown-panel.ng-select-bottom {
+  top: 45px
+}
+
+::ng-deep .ng-option .ng-star-inserted .ng-option-marked {
+  border-bottom: 1px solid gray;
+}
+
+::ng-deep .ng-dropdown-panel.ng-select-top {
+  bottom: -100px;
+}
+
+::ng-deep .empty-row {
+  text-align: center !important;
+  margin-top: 150px;
+  color: gray;
+}
+
+::ng-deep .datatable-header-cell-label.draggable {
+  font-size: 16px;
+}

@@ -1,0 +1,95 @@
+#bg {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: gainsboro;
+}
+
+img {
+    height: 324px;
+}
+
+.padd {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#head {
+    font-size: 14px;
+    font-style: italic;
+}
+
+#row1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#row1>div {
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+    height: 110px;
+    color: black;
+    font-weight: 500;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#row1>div>p {
+    margin: 0;
+}
+
+.hover:hover {
+    border-color: rgb(255, 81, 0);
+}
+
+.card-body {
+    margin-top: auto !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px!important
+}
+
+.listproduct {
+    background-color: orangered;
+    color: white;
+}
+
+img {
+    text-align: center;
+}
+
+#row2,
+#row3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 540px;
+    /* width: 23%; */
+    margin-bottom: 20px;
+}
+
+.hoverbtn:hover {
+    border-color: orange!important;
+    background-color: orange;
+    color: white;
+}
+
+#logoP {
+    background-color: #0c930c;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px 10px 15px;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    border-radius: 0 50% 50% 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+}

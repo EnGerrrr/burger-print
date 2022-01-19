@@ -1,0 +1,103 @@
+<div id="bg">
+    <p style="font-weight: bold;font-size: 20px;padding-bottom: 15px;margin-bottom: 0;">Profile</p>
+    <div style="background-color: white;padding: 30px;">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 1px solid gainsboro;">
+                <button class="hoverbtn" style="border: none;background-color: white;border-bottom: 1px solid #fd7e14;color: #fd7e14;" #changepassword1 (click)=changepasswordcolor() id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
+                    aria-controls="nav-home" aria-selected="true">Change password</button>
+                <button class="hoverbtn" style="border: none;background-color: white;color: #666;" #changeinfocolor (click)="changecolorinfo()" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                    aria-selected="false" >Change affililate info</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                    <div style="width: 30%;">
+                        <p class="title">Change password</p>
+                        <form #userform="ngForm" (submit)="updatepassword()" class="">
+                            <p>Current password</p>
+                            <div class="pass">
+                                <input #oldpassword #oldpass="ngModel" [(ngModel)]="userpassword.password" required type="password" class="form-control mb-3" name="oldpass">
+                                <i class="fas fa-eye" (click)="changetypeoldpass()"></i>
+                            </div>
+                            <p class="text-danger" *ngIf="oldpass?.errors?.required&& oldpass?.touched">Bạn chưa nhập mật khẩu</p>
+                            <p>New password</p>
+                            <div class="pass">
+                                <input #newpassword #newpass="ngModel" [(ngModel)]="userpassword.new_password" required type="password" class="form-control mb-3" name="newpass">
+                                <i class="fas fa-eye" (click)="changetypenewpass()"></i>
+                            </div>
+                            <p class="text-danger" *ngIf="newpass?.errors?.required && newpass?.touched">Bạn chưa nhập mật khẩu</p>
+                            <p>Confirm new password</p>
+                            <div class="pass">
+                                <input #confirmnewpassword #confirmpass="ngModel" [(ngModel)]="userpassword.confirm_password" required type="password" class="form-control mb-3" name="confirm_password">
+                                <i class="fas fa-eye" (click)="changetypeconfirm()"></i>
+                            </div>
+                            <p class="text-danger" *ngIf="confirmpass?.errors?.required && confirmpass?.touched">Bạn chưa nhập mật khẩu</p>
+                            <input type="submit" style="background-color: #fd7e14;" class="form-control btn  text-white" value="UPDATE">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="row">
+                    <p class="title">Change affililate info</p>
+                    <ng-container *ngIf="user != null">
+                        <form class="col-3" id="col-3" #useform="ngForm" (submit)="Updateinfo()">
+                            <p>Email*</p>
+                            <input #email class="form-control" type="text" [(ngModel)]="user.email" name="email">
+                            <p>Public name*</p>
+                            <input #publicname class="form-control" [(ngModel)]="user.userName" type="text" name="publicname">
+                            <p>Legal name</p>
+                            <input class="form-control" type="text" name="phonenumber">
+                            <p>Phone number*</p>
+                            <input #phonenumber [(ngModel)]="user.phone" name="phonenumber" class="form-control" type="text">
+                            <h4>Language and Timezone</h4>
+                            <p>Language</p>
+                            <select name="language" id="" style="width: 100%;">
+                            <option value="VN">Viet Nam</option>
+                            <option value="USA">USA</option>
+                            <option value="China">China</option>
+                            <option value="English">English</option>
+                        </select>
+                            <p>Time zone</p>
+                            <select name="timezone" id="" style="width: 100%;">
+                            <option value="Timezone">Time Zone</option>
+                            <option value="Time">Time</option>
+                        </select>
+                            <p>Referer: None</p>
+                            <input class="form-control btn btn-warning text-white" type="submit" value="UPDATE INFO">
+                        </form>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Address</p>
+                                    <input #address [(ngModel)]="user.address" name="address" class="form-control mb-3" type="text" name="address">
+                                    <input class="form-control mb-3" type="text" name="province">
+                                    <input class="form-control mb-3" type="text">
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-control mb-3" type="text">
+                                    <input #town name="town" class="form-control mb-3" type="text">
+
+                                    <select name="country" id="">
+                                    <option  value="VN">Viet Nam</option>
+                                    <option  value="USA">USA</option>
+                                    <option  value="china">China</option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <p>Avatar</p>
+                            <img #avatar src="" alt="">
+                            <input type="file" (change)="Onchangefile($event)" value="Edit">
+                            <button class="mt-2" type="button" (click)="Upload()">Upload</button>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

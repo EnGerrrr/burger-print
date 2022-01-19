@@ -1,0 +1,142 @@
+<div class="wrapper">
+  <div class="pt-2 pb-3">
+    <ul class="nav nav-tabs pb-3 border-bottom-secondary">
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning "
+          routerLink="/platform/report/conversion-funnel"> Conversion Funnel </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/sale-report"> Sales Report </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning" routerLink="/platform/report/profit">
+          Profit </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted active">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning "
+          routerLink="/platform/report/abandoned-checkout"> Abandoned checkout </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/earning-source"> Earning source </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/top-products"> Top products </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning"
+          routerLink="/platform/report/sale-in-day"> Sales of the Day </a>
+      </li>
+      <li class="position-relative mt-4 cursor-pointer ng-star-inserted">
+        <a class="nav-item pt-4 pr-4 pl-4 pb-3-1 text-secondary hover-warning "
+          routerLink="/platform/report/top-campaign"> Top Campaigns </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="d-flex align-items-center pb-3">
+      <h4 class=" text-secondary">Total sales</h4>
+      <div class="d-flex flex-wrap">
+        <form #formsearch="ngForm" class="input-group ">
+          <ng-select class="select1" name="time" [items]="time" [(ngModel)]="selectedTime" bindLabel="name"
+            bindValue="name" [clearable]="false" [searchable]="false">
+            <ng-template ng-label-tmp let-item="item">
+              <i class="fa fa-calendar icon-mg" aria-hidden="true"></i>{{item.name}}
+            </ng-template>
+          </ng-select>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-content m-0 mb-5">
+    <div class="p-25px ng-star-inserted">
+      <!-- <div class="no-data">No data</div> -->
+      <div style="text-align:center">
+        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+          [plotOptions]="chartOptions.plotOptions" [responsive]="chartOptions.responsive" [xaxis]="chartOptions.xaxis"
+          [legend]="chartOptions.legend" [fill]="chartOptions.fill"></apx-chart>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-content m-0">
+    <div class="paging-2r">
+      <div class="row d-flex justify-content-between paging-custom">
+        <div class="row d-flex align-items-center">
+          <form #formsearch="ngForm" class="input-group display1 ">
+            <ng-select class=" select1" name="domains" [items]="domains" [(ngModel)]="selecteddomain" bindLabel="name"
+              bindValue="name" [clearable]="false" [searchable]="false">
+              <ng-template ng-label-tmp let-item="item" class="pd-l-12">
+                {{item.name}}
+              </ng-template>
+            </ng-select>
+            <ng-select class="select1" name="time" [items]="time" [(ngModel)]="selectedTime" bindLabel="name"
+              bindValue="name" [clearable]="false" [searchable]="false">
+              <ng-template ng-label-tmp let-item="item">
+                {{item.name}}
+              </ng-template>
+            </ng-select>
+            <div class="d-flex export1">
+              <div class="dropdown cutomize">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="sampleDropdownMenu"
+                  data-toggle="dropdown">
+                  Customize Columns
+                </button>
+                <div class="dropdown-menu ">
+                  <div class="customize-sub">
+                    <span class="customize-sub2 font-size16">Customize columns</span>
+                  </div>
+                  <ul class="overflow-hidden font-size16">
+                    <li *ngFor="let column of columns">
+                      <input type="checkbox" class="checkbox1 k-checkbox" id="{{ column }}"
+                        [disabled]="isDisabled(column)" [checked]="!isHidden(column)" (change)="hideColumn(column)">
+                      <label class="lable1" for="{{ column }}">{{ column }}</label>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <button class="btn btn-primary  fz btn-burger">
+                <span>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Export</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-striped border-top table-hover">
+            <thead class="fo-text">
+              <tr>
+                <th scope="col" *ngIf="!isHidden('Date')">Date</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Customer name')">Customer name</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Email address')">Email address</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Phone number')">Phone number</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Order quantity')">Order quantity</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Cart')">Cart</th>
+                <th class="text-center" scope="col" *ngIf="!isHidden('Status')">Status</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users" class="ng-star-inserted">
+                <th scope="row" class="ng-star-inserted fo-text1" *ngIf="!isHidden('Date')">{{ user.order_date | date |
+                  lowercase }} </th>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Customer name')">{{ user.name }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Email address')">{{ user.email }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Phone number')">{{ user.phone }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Order quantity')">{{ user.quantity }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Cart')">{{ user.amount }}</td>
+                <td class="text-center ng-star-inserted" *ngIf="!isHidden('Status')">{{ user.checkout_stage}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>

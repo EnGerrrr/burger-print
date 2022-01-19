@@ -1,0 +1,80 @@
+﻿<div class="auth-wrap">
+  <div class="card">
+      <div class="card-body">
+          <div class="auth-block">
+              <h2 class="title">Sign up</h2>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <input type="text" formControlName="email" class="form-control form-control-lg"
+                          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Email is required</div>
+                          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" formControlName="password"  class="form-control form-control-lg"
+                          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">Password is required</div>
+                          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="password" formControlName="cfPassword"  class="form-control form-control-lg"
+                          [ngClass]="{ 'is-invalid': submitted && f.cfPassword.errors }" placeholder="Confirm Password" />
+                      <div *ngIf="submitted && f.cfPassword.errors" class="invalid-feedback">
+                          <div *ngIf="f.cfPassword.errors.required">Confirm Password is required</div>
+                          <div *ngIf="f.cfPassword.errors.mustMatch">Password mismatch</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="text"  class="form-control form-control-lg" placeholder="Full Name (Optional)" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" formControlName="phone" class="form-control form-control-lg"
+                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Phone number (Optional)" />
+
+                </div>
+                <div class="form-group">
+                  <input type="text"  class="form-control form-control-lg" placeholder="Referer" />
+              </div>
+                  <div class="form-group">
+                      <button [disabled]="loading" class="btn btn-primary btn-lg btn-block text-uppercase">
+                          SIGN UP
+                      </button>
+                      <div class="check-box1 checkbox-customize">
+                        <input type="checkbox" id="acceptTerms" formControlName="acceptTerms" class="check-box2" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }">
+                        <label for="acceptTerms" class=""> <span></span> I agree to the Terms & Conditions </label>
+                        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">You need to agree with the Terms & Conditions </div>
+                      </div>
+                      <div class="signup-sub" >
+                        <div class="row">
+                          <div class="col">
+                            <hr>
+                          </div>
+                          <div class="col">
+                            <p>Or log in with </p>
+                          </div>
+                          <div class="col">
+                            <hr>
+                          </div> 
+                        </div>
+                      </div>
+                      <div class="google-main">
+                        <div class="google-sub">
+                        </div>
+                      </div>
+                      <div class="signup-sub2">
+                        <p> Already have an account?
+                          <a routerLink="/login" class="">Login</a>
+                        </p>
+
+                      </div>
+
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+.layout-container {
+    padding-top: none;
+}
+
+img {
+    max-height: 100vh;
+    border-radius: 0 60px 0 0;
+}
+
+.row {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.col-6 {
+    border-bottom: 1px solid #dedede;
+}
+
+// .login-tab.active[_ngcontent-vbv-c6],
+// .login-tab[_ngcontent-vbv-c6]:hover {
+//     color: #ef911b;
+//     // border-bottom: 2px solid #ef911b;
+// }
+
+.col-sub {
+    color: #ef911b;
+    border-bottom: 2px solid #ef911b;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    color: #fff;
+    background-color: #fa9918;
+    font-size: 16px;
+    border-color: #fa9918;
+    width: 100%;
+}
+
+.auth-wrap .form-group {
+    margin-bottom: 2rem;
+}
+
+.form-control-lg {
+    font-size: 1rem;
+    height: 3.5rem;
+}
+
+.checkbox-customize {
+    position: relative;
+    padding-left: 8px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.check-box2 {
+    width: 16px;
+    height: 16px;
+}
+
+.login-sub2 {
+    text-align: left;
+}
+
+.login-sub3 {
+    font-size: 16px;
+    text-align: end;
+    padding-top: 8px;
+    text-transform: capitalize;
+}
+
+.forgot {
+    text-decoration: none;
+}
+
+.col-6 {
+    border-bottom: 0px solid #dedede;
+}
+
+.col-lg-2 {
+    width: 44%;
+}
+
+.text-sub {
+    text-transform: none;
+    font-size: 16px;
+    color: #666;
+}
+
+.auth-wrap .title {
+    margin-top: 100px;
+    margin-bottom: 42px;
+}
+
+.auth-wrap .card-body {
+    padding: 0;
+}
+
+.auth-wrap .card {
+    height: auto;
+    border: 0;
+}
+
+// #head {
+//     border-bottom: 1px solid gainsboro;
+// }
+
+#head>div:hover {
+    color: #ef911b !important;
+    border-bottom: 2px solid #ef911b !important;
+}

@@ -1,0 +1,25 @@
+.wrapper {
+  padding: 30px 30px 7rem;
+  background-color: #e5e5e5;
+  height: 1000px;
+}
+.nav-tabs li a {
+  text-decoration: none;
+
+}
+.nav-tabs li {
+  padding: 0 26px 18px 24px;
+}
+.nav-tabs {
+  border-bottom: 1px solid #cecece;
+}
+
+.active {
+  border-bottom: 2px solid #eb8708;
+}
+.pb-3 {
+  padding-bottom: 0 !important;
+}
+.nav-tabs li:hover {
+  border-bottom: 2px solid #eb8708;
+}

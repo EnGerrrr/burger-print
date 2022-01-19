@@ -1,0 +1,87 @@
+span.form-control.label-row-page {padding: 0 10px;line-height: 35px;margin-left: 5px;width: 65px;text-align: justify;font-size: 12px;}
+.show-rows-data {
+    margin: 0 20px 0 0;
+    position: relative;
+}
+.show-rows-data label {margin-right: 10px;margin-bottom: 0;}
+.show-rows-data ul {min-width: 80px;}
+.pagination {margin: 5px 0;}
+.pagination li a[disabled="true"] {
+	opacity: 0.6;
+	pointer-events: none;
+}
+.pagination li a[disabled="true"], .pagination li a.active, .dropdown-select li.active {
+	pointer-events: none;
+}
+.pagination li a.active, .pagination li a:hover, .pagination li a:active, .pagination li a:focus {
+	background: #fa9918;
+	color: #fff;
+	border:  1px solid #fa9918;
+}
+.pagination li a:visited {
+	background: #fff;
+	color: #28313b;
+	border:  1px solid #dadfea;
+}
+
+.app-pagination.full-screen {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #f1f1f1;
+	z-index: 1;
+	padding: 3px 0;
+}
+
+.app-pagination-xs .pagination li a {
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 8px;
+}
+.app-pagination-xs .app-pagination-count p {font-size: 10px;}
+ul.pagination li {
+	cursor: pointer;
+}
+.option-dropdown-select button {
+	min-width: 80px;
+    flex: 1;
+}
+.pagination > li > a, .pagination > li > span, .pagination > .disabled > a {
+	min-width: 30px;
+    width: auto;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 3px;
+    background: #E8E8E8;
+    font-size: 13px;
+    border: 0 !important;
+    border-radius: 3px;
+}
+.pagination > li:first-child a {
+	margin-left: 0;
+}
+.pagination > li:last-child a {
+	margin-right: 0;
+}
+.pagination > li i {
+	font-size: 12px;
+}
+.current {
+	pointer-events: none;
+}
+
+@media screen and (max-width: 600px) {
+	.row-pagination-table {
+		-ms-flex-pack: center;
+    	justify-content: center;
+	}
+	.app-pagination-count {text-align: center; margin-top: 5px;}
+	.app-pagination-count p {font-size:11px;}
+	.show-rows-data {
+		display: none;
+	}
+	.show-rows-data label {width:100%;}
+}
